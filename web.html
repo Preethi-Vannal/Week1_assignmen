@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Progate</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Progate</title>
+    <style>
+      .flex-container{
+        display:-webkit-flex;
+        display:flex;
+        -webkit-flex-flow:row wrap;
+        font-weight:bold;
+        text-align:center;
+      }
+      .flex-container>*{
+        padding:10px;
+        flex:1 100%;
+      }
+      .main{
+        text-align:left;
+        background:rgb(200,234, 241);
+      }
+      .aside1{
+        background:olive;
+      }
+      .aside2{
+        background:darkorange;
+      }
+      .aside3{
+        background:darkgreen;
+      }
+      @media all and (min-width):800px{
+        .main{
+          flex:3 0px;
+        }
+        .aside1{
+          order:1;
+        }
+        .aside2{
+          order:2;
+        }
+        .aside3{
+          order:3;
+        }
+        .main{
+          order:3;
+        }
+        .aside3{
+          order:4;
+        }
+        .footer{
+          order:5;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: lightblue";>
+    <div class="header">
+      <div class="header-logo">Progate</div>
+      <div class="header-list">
+        <ul>
+          <li><a href="#home">About</a></li>
+          <li><a href="#Lessons">Lessons</a></li>
+          <li><a href="#Contact us">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="copy-container">
+        <h1>HELLO WORLD<span>.</span></h1>
+        <h2>Let's learn to code</h2>
+      </div>
+      
+      <div class="contents">
+        <h3 class="section-title">Lessons</h3>
+        <div class="contents-item">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/html.svg">
+          <p>HTML & CSS</p>
+        </div>
+        <div class="contents-item">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/php.svg">
+          <p>PHP</p>
+        </div>
+        <div class="contents-item">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/ruby.svg">
+          <p>Ruby</p>
+        </div>
+        <div class="contents-item">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/swift.svg">
+          <p>Swift</p>
+        </div>
+      </div>
+      
+      <div class="flex-container">
+        <header class="header"><p>Company Summary</p></header>
+        <article class="main">
+          <p>Ferronisa
+            Founder/CEO
+            Born in Aichi in 1993. Studied at The University of Tokyo, School of Engineering (2013-2015). Lived in Perth, Australia during primary and junior high school. Founded Progate in July, 2014. Featured in “Forbes 30 Under 30 ASIA 2018”.
+          </p>
+          <aside class="aside aside1">Date Founded:31/07/2014</aside>
+          <aside class="aside aside2">Capital:232 Million</aside>
+          <aside class="aside aside3">Shareholders: East Ventures</aside>
+        </article>
+      </div>
+      <button type="button" onclick="myFunction()">Get background color</button>
+      <button type="button" onclick="myFunction1()">get footer background</button>
+      <button type="button" onclick="myFunction3()">get header fontsize</button>
+      <button type="button" onclick="myFunction3()">change background color</button>
+      <script>
+         function myFunction(){
+           alert(document.body.style.backgroundColor);
+         }
+         document.write("<br>");
+         function myFunction1(){
+            var match=document.getElementsByClassName("footer")
+            alert(document.write(match[0].style.backgroundColor));
+          }
+         document.write("<br>");
+         function myFunction2(){
+            var match=document.getElementsByClassName("header")
+            alert(document.write(match[0].style.fontSize));
+          }
+         document.write("<br>");
+         function myFunction3(){
+            var match=document.getElementsByClassName("contents")
+            for(var i=0; i<match.length;i++){
+                match[i].style.backgroundColor="green";
+            }
+          }
+
+      </script>
+      <div class="contact-form">
+        <h3 class="section-title">Contact us</h3>
+        <p>Email (Required)</p>
+        <!-- Add an <input> tag -->
+        <input>
+        
+        <p>Message (Required)</p>
+        <!-- Add a <textarea> tag --> 
+        <textarea></textarea>
+        
+        <p>* Required fields must be filled</p>
+        <!-- Add an <input> tag -->
+        <input class="contact-submit" type="submit" value="Send">
+        
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-logo">Progate</div>
+      <div class="footer-list">
+        <ul>
+          <li>About</li>
+          <li>Jobs</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
